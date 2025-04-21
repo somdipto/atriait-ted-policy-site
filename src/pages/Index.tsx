@@ -1,20 +1,17 @@
 import { useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Separator } from "@/components/ui/separator";
-
 const Index = () => {
   const [activeTab, setActiveTab] = useState<"terms" | "privacy">("terms");
-
-  return (
-    <div className="min-h-screen flex flex-col bg-white">
+  return <div className="min-h-screen flex flex-col bg-white">
       {/* Header */}
-      <header className="py-6 bg-tedred shadow-md">
+      <header className="py-6 shadow-md bg-zinc-950">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col items-center justify-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-white">
+            <h1 className="text-3xl md:text-4xl font-bold text-red-600">
               TEDx<span className="font-light">AtriaIT</span>
             </h1>
-            <p className="text-white mt-2 text-sm md:text-base">Terms & Conditions</p>
+            <p className="text-white mt-2 text-sm md:text-base"></p>
           </div>
         </div>
       </header>
@@ -23,20 +20,10 @@ const Index = () => {
       <main className="container mx-auto px-4 md:px-8 py-8 flex-grow">
         {/* Tab Navigation */}
         <div className="flex mb-6 border-b border-gray-200">
-          <button
-            onClick={() => setActiveTab("terms")}
-            className={`px-4 py-2 font-medium ${
-              activeTab === "terms" ? "text-tedred border-b-2 border-tedred" : "text-gray-600"
-            }`}
-          >
+          <button onClick={() => setActiveTab("terms")} className={`px-4 py-2 font-medium ${activeTab === "terms" ? "text-tedred border-b-2 border-tedred" : "text-gray-600"}`}>
             Terms & Conditions
           </button>
-          <button
-            onClick={() => setActiveTab("privacy")}
-            className={`px-4 py-2 font-medium ${
-              activeTab === "privacy" ? "text-tedred border-b-2 border-tedred" : "text-gray-600"
-            }`}
-          >
+          <button onClick={() => setActiveTab("privacy")} className={`px-4 py-2 font-medium ${activeTab === "privacy" ? "text-tedred border-b-2 border-tedred" : "text-gray-600"}`}>
             Privacy Policy
           </button>
         </div>
@@ -46,8 +33,7 @@ const Index = () => {
             {activeTab === "terms" ? "Terms and Conditions" : "Privacy Policy"}
           </h2>
           
-          {activeTab === "terms" ? (
-            <div className="space-y-6">
+          {activeTab === "terms" ? <div className="space-y-6">
               <div className="prose max-w-none">
                 <p className="mb-4">
                   TED is a global platform dedicated to sharing ideas worth spreading. By accessing or using any TED sites—including 
@@ -131,9 +117,7 @@ const Index = () => {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-            </div>
-          ) : (
-            <div className="space-y-6">
+            </div> : <div className="space-y-6">
               <div className="prose max-w-none">
                 <p className="mb-4">
                   TED is committed to protecting your privacy and safeguarding your personal data. This Privacy Policy explains what information 
@@ -240,13 +224,12 @@ const Index = () => {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-            </div>
-          )}
+            </div>}
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
+      <footer className="text-white py-8 bg-zinc-900">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">
@@ -265,8 +248,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
